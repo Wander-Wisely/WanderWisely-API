@@ -18,9 +18,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "wander3306wisely",
     "database": "wander_wisely",
-    "host": "127.0.0.1",
+    "host": "34.101.227.234",
+
     "dialect": "mysql"
   }
 }
