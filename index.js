@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/v1", router);
 
-const sequelize = new Sequelize("ww", "root", "password", {
+const sequelize = new Sequelize("woke", "root", "password", {
   dialect: "mysql",
   dialectOptions: {
     socketPath: "/var/run/mysqld/mysqld.sock",

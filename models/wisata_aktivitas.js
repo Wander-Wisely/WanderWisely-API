@@ -4,10 +4,10 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class WisataAktivitas extends Model {
     static associate(models) {
-      WisataAktivitas.belongsTo(models.Wisata, { foreignKey: "id_wisatas" });
-      WisataAktivitas.belongsTo(models.Aktivitas, {
-        foreignKey: "id_aktivitas",
-      });
+      // WisataAktivitas.belongsTo(models.Wisata, { foreignKey: "id_wisatas" });
+      // WisataAktivitas.belongsTo(models.Aktivitas, {
+      //   foreignKey: "id_aktivitas",
+      // });
     }
   }
 

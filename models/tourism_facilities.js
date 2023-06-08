@@ -1,27 +1,31 @@
 "use strict";
 const { Model } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
-  class Media extends Model {
+  class TourismFacility extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate(models) {
-      Media.belongsTo(models.Wisata, {
-        foreignKey: "id_tempat",
+      TourismFacility.belongsTo(models.TourismAttraction, {
+        foreignKey: "tourism_attraction_id",
       });
     }
   }
-  Media.init(
+  TourismFacility.init(
     {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false,
+        autoIncrement: true,
       },
-      id_tempat: {
+      tourism_attraction_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      url: {
-        type: DataTypes.TEXT,
+      name: {
+        type: DataTypes.STRING(100),
         allowNull: true,
       },
       createdAt: {
@@ -37,9 +41,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Media",
-      tableName: "medias",
+      modelName: "TourismFacility",
+      tableName: "tourism_facilities",
     }
   );
-  return Media;
+  return TourismFacility;
 };
