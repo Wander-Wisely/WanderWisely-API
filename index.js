@@ -19,7 +19,7 @@ const sequelize = new Sequelize("wander_wisely", "root", "wander3306wisely", {
 });
 
 // listening port
-app.listen(8000, async () => {
+app.listen(9000, async () => {
   try {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
