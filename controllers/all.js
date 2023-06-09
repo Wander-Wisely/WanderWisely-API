@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const getAlldatas = async (req, res) => {
-  const pageSize = 10;
+  const pageSize = parseInt(req.query.size) || 5; // Default page size is 5
   const currentPage = req.query.page || 1;
 
   try {
@@ -30,17 +30,12 @@ const getAlldatas = async (req, res) => {
 
     const totalPages = Math.ceil(count / pageSize);
 
-    res.json({
-      currentPage,
-      totalPages,
-      items: rows,
-    });
+    res.json(rows);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error retrieving data" });
   }
 };
-
 const getAllDatasById = async (req, res) => {
   const wisataId = req.params.id; // Assuming the ID is passed as a route parameter
 
@@ -76,7 +71,6 @@ const getAllDatasById = async (req, res) => {
 };
 
 module.exports = { getAlldatas, getAllDatasById };
-
 
 // const models = require("../models");
 
