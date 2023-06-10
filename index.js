@@ -19,11 +19,11 @@ const sequelize = new Sequelize("wander_wisely", "root", "wander3306wisely", {
 });
 
 // listening port
-app.listen(9000, async () => {
+app.listen(8080, async () => {
   try {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
-    console.log("server running on http://localhost:9000");
+    console.log("server running on http://localhost:8080");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
