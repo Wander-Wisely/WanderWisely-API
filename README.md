@@ -8,6 +8,9 @@ This API provides endpoints to retrieve data for the Wander Wisely application.
 - Method: GET
 - Endpoint: `/api/v1/alls`
 - Description: Retrieve all data.
+- Parameters:
+  -  `page` (optional): The page number of the data to retrieve (default: 1).
+  -  `size` (optional): The number of items per page (default: 5).
 - Response: JSON object containing all the data.
 
 ### Get Data by ID
